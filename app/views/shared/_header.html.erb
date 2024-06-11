@@ -1,11 +1,13 @@
 <header class="bg-gray-900 py-4 px-8">
     <div class="container flex justify-between">
         <%= link_to "money pro", '/', class: 'text-2xl text-white'%>
-        <nav>
-            <ul class="flex items-center gap-2">
-                <li><%= link_to "Contas", "", class: 'text-white'%></li>
-                <li><%= link_to "Perfil", "", class: 'text-white'%></li>
-            </ul>
-         </nav>
+        <% if user_signed_in?%>
+            <nav>
+                <ul class="flex items-center gap-2">
+                    <li><%= link_to "Contas", "", class: 'text-white'%></li>
+                    <li><%= link_to "Perfil", "", class: 'text-white'%></li>
+                </ul>
+            </nav>
+         <% end %>
     </div>
 </header>
