@@ -1,1 +1,25 @@
-<h1>Nova entrada</h1>
+<div class="flex justify-center mt-6">
+    <div class=" bg-white shadow-md p-6 rounded-md">
+        <h2 class="text-2xl text-gray-900 mb-8">Adicionar entrada</h2>
+        <%= form_with model: @income, method: :post, url: '/entradas' do |f|%>
+            <div class="flex gap-x-6 mb-4">
+                <div class="flex flex-col">
+                    <%= f.label :title, class: 'text-xl text-gray-600'%>
+                    <%= f.text_field :title, class: 'rounded-md focus:bg-blue-50'%>
+                </div>
+                <div class="flex flex-col">
+                    <%= f.label :value, class: 'text-xl text-gray-600'%>
+                    <%= f.number_field :value, class: 'rounded-md focus:bg-blue-50'%>
+                </div>
+            </div>
+            <div class="flex flex-col mb-4">
+                <%= f.label :description, class: 'text-xl text-gray-600'%>
+                <%= f.text_area :description, class: 'rounded-md focus:bg-blue-50'%>
+            </div>
+            <div class="flex gap-3">
+                <%= f.submit 'Adicionar', class: 'bg-blue-600 p-2 cursor-pointer        hover:bg-blue-800 rounded-md transition-all text-white font-medium'%>
+                <%= link_to 'Voltar',entradas_path, class: 'bg-red-600 p-2 cursor-pointer  rounded-md transition-all text-white font-medium hover:bg-red-800'%>
+            </div>
+        <% end %>
+    </div>
+</div>
