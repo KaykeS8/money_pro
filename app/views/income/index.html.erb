@@ -8,5 +8,14 @@
             <% end %>
         </div>
     </div>
+    <section>
+        <% if @incomes.blank?%>
+                Sem entradas
+            <%else%>
+            <% @incomes.each do |income| %>
+                <h3><%= income.title %></h3>
+            <% end %>
+        <%end%>
+    </section>
 
 </div>
